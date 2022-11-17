@@ -1,5 +1,6 @@
 package br.com.ifgoiano.trabalhopoo.controller;
 
+import br.com.ifgoiano.trabalhopoo.models.Usuario;
 import br.com.ifgoiano.trabalhopoo.respositorys.AlunoRepository;
 import br.com.ifgoiano.trabalhopoo.respositorys.CoordenadorRepository;
 import br.com.ifgoiano.trabalhopoo.respositorys.ProfessorRepository;
@@ -27,11 +28,11 @@ public class LoginController {
     }
 
     @GetMapping("/login")
-    public ResponseEntity<Object> getLoginUser(@PathVariable(value = "email") String email, @PathVariable(value = "mat") String password) {
+    public ResponseEntity<Usuario> getLoginUser(@PathVariable(value = "email") String email, @PathVariable(value = "mat") String password) {
         if (alunoRepository.existsByEmail(email) && alunoRepository.existsById(password)){
-            return (ResponseEntity<Object>) ResponseEntity.status(HttpStatus.OK);
+            return ( ResponseEntity.status(HttpStatus.OK).build());
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Dados incorretos");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
