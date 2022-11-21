@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@PrimaryKeyJoinColumn(name = "mat")
 @Table(name = "TB_COORDENADOR")
 public class Coordenador extends Professor {
 

@@ -1,0 +1,45 @@
+/*Geral*/
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/*Header*/
+.cabecalho{
+    height: 100px;
+    background-color: #019220;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Main*/
+main{
+    width: 100%;
+}
+.container{
+    background-color: #aaa;
+    text-align: justify;
+    display: flex;
+}
+.container_text{
+    border-width: 3px;
+    border-style: solid;
+    border-color: #222;
+}
+.btn_login{
+    display: flex;
+   justify-content: center;
+   align-items: center;
+    
+}
+.btn_login a{
+    text-decoration: none;
+}
+
+/*Footer*/
+footer{
+    background-color: #AAA;
+}

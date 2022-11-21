@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="pt" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/login.css" th:href="@{/assets/css/login.css}" />
+    
+    <title>Núcleo Estudantil</title>
+</head>
+<body>
+    <header>
+        <div class="cabecalho">
+            <div class="titulo"><h1>FI Goiano</h1></div>
+        </div>
+    </header>
+
+    <main>
+        
+            <p th:if="${loginError}" class="error">Usuário e/ou Senha incorreto</p>
+            <form th:object="${user}" th:action="@{/login}"  method="POST">
+            <div class="mat" >             
+                <input type="email" id="email" required th:field="*{email}">
+                <label  class="email" >Email</label>
+            </div>
+            <br>
+            <div class="password">
+                <input type="password" id="password" required th:field="*{id}">
+                <label class="password">Senha</label>
+            </div>
+            <br>
+            <div class="botao_login">
+                <input type="submit" value="Entrar">
+            </div>
+        </form>
+
+    </main>
+
+    <footer>
+        <div>
+            <h1>Feito pelo bruno laun e samuel e mais dois! direoto copiraigth</h1>
+        </div>
+    </footer>
+
+</body>
+</html>

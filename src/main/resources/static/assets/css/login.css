@@ -21,7 +21,6 @@ form{
     align-items: center;
     justify-content: center;
     min-height: 40vh;
-
 }
 label{
     display: inline-block;
@@ -30,4 +29,7 @@ label{
 .botao_login{
     display: inline-block;
     width: 130px;
+}
+footer{
+    background-color: #AAA;
 }

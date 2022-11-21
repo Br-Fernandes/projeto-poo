@@ -4,7 +4,9 @@ import br.com.ifgoiano.trabalhopoo.respositorys.AlunoRepository;
 import br.com.ifgoiano.trabalhopoo.respositorys.CoordenadorRepository;
 import br.com.ifgoiano.trabalhopoo.respositorys.ProfessorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class LoginServices {
 
     private final AlunoRepository alunoRepository;
@@ -18,16 +20,16 @@ public class LoginServices {
         this.coordenadorRepository = coordenadorRepository;
     }
 
-    public boolean existsByEmailAluno(String email){
-        return alunoRepository.existsByEmail(email);
+    public boolean existsAluno(String email, Long id) {
+        return alunoRepository.existsByEmail(email) && alunoRepository.existsById(id);
     }
 
-    public boolean existsByEmailProfessor(String email){
-        return professorRepository.existsByEmail(email);
+    public boolean existsProfessor(String email, Long id) {
+        return professorRepository.existsByEmail(email) && professorRepository.existsById(id);
     }
 
-    public boolean existsByEmailCoordenador(String email){
-        return coordenadorRepository.existsByEmail(email);
-    }
 
+    public boolean existsCoordenador(String email, Long id) {
+        return coordenadorRepository.existsByEmail(email) && coordenadorRepository.existsById(id);
+    }
 }

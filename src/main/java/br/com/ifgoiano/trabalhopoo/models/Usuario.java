@@ -4,16 +4,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Getter
 @Setter
-public class Usuario {
+public class Usuario implements Serializable {
 
     @Id
     @Column(nullable = false, unique = true, length = 7)
-    private int mat;
+    private Long id;
 
     @Column(nullable = false, length = 50)
     private String name;

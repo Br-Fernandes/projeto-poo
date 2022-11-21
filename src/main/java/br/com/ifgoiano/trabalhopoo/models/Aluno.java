@@ -9,20 +9,12 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Table(name="TB_ALUNO")
-public class Aluno {
-
-    @Id
-    @Column(nullable = false, length = 7)
-    private int mat;
+public class Aluno extends Usuario {
 
     @Column(nullable = false, length = 50)
-    private String name;
+    private String motherName;
 
-    @Column(nullable = false, unique = true, length = 256)
-    private String email;
-
-    @Column(length = 9)
-    private String phoneNumber;
-
+    @Column(length = 50)
+    private String fatherName;
 
 }
