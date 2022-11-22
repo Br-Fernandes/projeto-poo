@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/static/assets/css/login.css" th:href="@{/assets/css/login.css}" />
+    <link rel="shortcut icon" href="../static/assets/images/icon-site.jpeg" th:href="@{/assets/images/icon-site.jpeg}">
+
     
     <title>Núcleo Estudantil</title>
 </head>
@@ -16,9 +18,10 @@
     </header>
 
     <main>
-        
-            <p th:if="${loginError}" class="error">Usuário e/ou Senha incorreto</p>
-            <form th:object="${user}" th:action="@{/login}"  method="POST">
+
+
+        <form th:object="${user}" th:action="@{/login}"  method="POST">
+            <span th:class="error" th:if="${error}">Email e/ou Senha incorretos</span>
             <div class="mat" >             
                 <input type="email" id="email" required th:field="*{email}">
                 <label  class="email" >Email</label>

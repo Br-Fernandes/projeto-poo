@@ -30,6 +30,12 @@ label{
     display: inline-block;
     width: 130px;
 }
+.error{
+    display: inline-block;
+    text-align: center;
+    align-content: center;
+    width: 90px;
+}
 footer{
     background-color: #AAA;
 }

@@ -24,6 +24,7 @@ public class LoginController {
         return "index";
     }
 
+
     @GetMapping("/login")
     public String login(Model model) {
         model.addAttribute("user", new Usuario());
@@ -32,22 +33,21 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String getLoginUser( @ModelAttribute("user") Usuario user) {
+    public String getLoginUser( @ModelAttribute("user") Usuario user, Error error) {
+        String teste = "";
         if(loginServices.existsAluno(user.getEmail(),user.getId())){
             return "redirect:/alunoPage?user=" + user.getId();
-        }
-        if (loginServices.existsProfessor(user.getEmail(), user.getId())) {
+        } else if (loginServices.existsProfessor(user.getEmail(), user.getId())) {
             return "redirect:/professorPage";
-        }
-        if (loginServices.existsCoordenador(user.getEmail(), user.getId())) {
+        } else if (loginServices.existsCoordenador(user.getEmail(), user.getId())) {
             return "redirect:/coordenadorPage";
+        } else {
+            error.addSuppressed(new Throwable("Login errado"));
+            return "login";
         }
-        return "/loginError";
+
     }
 
-    @GetMapping("/loginError")
-    public String loginError(Model model) {
-        model.addAttribute("loginError", true);
-        return "redirect:/login";
-    }
+
+
 }
