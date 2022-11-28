@@ -7,5 +7,5 @@ public interface CoordenadorRepository  extends JpaRepository<Coordenador, Strin
 
     boolean existsByEmail(String email);
 
-    boolean existsById(Long id);
+    boolean existsByIdUser(Long id);
 }

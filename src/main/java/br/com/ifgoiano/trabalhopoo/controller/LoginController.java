@@ -34,12 +34,13 @@ public class LoginController {
 
     @PostMapping("/login")
     public String getLoginUser( @ModelAttribute("user") Usuario user, Error error) {
-        String teste = "";
-        if(loginServices.existsAluno(user.getEmail(),user.getId())){
-            return "redirect:/alunoPage?user=" + user.getId();
-        } else if (loginServices.existsProfessor(user.getEmail(), user.getId())) {
+        if (user.getEmail().equals("secretaria@gmail.com") && user.getIdUser() == 1111111){
+            return "redirect:/secretaria";
+        } else if(loginServices.existsAluno(user.getEmail(),user.getIdUser())){
+            return "redirect:/alunoPage";
+        } else if (loginServices.existsProfessor(user.getEmail(), user.getIdUser())) {
             return "redirect:/professorPage";
-        } else if (loginServices.existsCoordenador(user.getEmail(), user.getId())) {
+        } else if (loginServices.existsCoordenador(user.getEmail(), user.getIdUser())) {
             return "redirect:/coordenadorPage";
         } else {
             error.addSuppressed(new Throwable("Login errado"));
@@ -47,7 +48,5 @@ public class LoginController {
         }
 
     }
-
-
 
 }

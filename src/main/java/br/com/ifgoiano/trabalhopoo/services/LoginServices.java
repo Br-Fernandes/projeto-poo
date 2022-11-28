@@ -1,5 +1,6 @@
 package br.com.ifgoiano.trabalhopoo.services;
 
+import br.com.ifgoiano.trabalhopoo.models.Professor;
 import br.com.ifgoiano.trabalhopoo.respositorys.AlunoRepository;
 import br.com.ifgoiano.trabalhopoo.respositorys.CoordenadorRepository;
 import br.com.ifgoiano.trabalhopoo.respositorys.ProfessorRepository;
@@ -21,15 +22,24 @@ public class LoginServices {
     }
 
     public boolean existsAluno(String email, Long id) {
-        return alunoRepository.existsByEmail(email) && alunoRepository.existsById(id);
+        return alunoRepository.existsByEmail(email) && alunoRepository.existsByIdUser(id);
     }
 
     public boolean existsProfessor(String email, Long id) {
-        return professorRepository.existsByEmail(email) && professorRepository.existsById(id);
+        return professorRepository.existsByEmail(email) && professorRepository.existsByIdUser(id);
     }
 
 
     public boolean existsCoordenador(String email, Long id) {
-        return coordenadorRepository.existsByEmail(email) && coordenadorRepository.existsById(id);
+        return coordenadorRepository.existsByEmail(email) && coordenadorRepository.existsByIdUser(id);
     }
+
+    public boolean existsById(Long id){
+        if (alunoRepository.existsByIdUser(id)) return true;
+
+        if (coordenadorRepository.existsByIdUser(id)) return true;
+
+        return professorRepository.existsByIdUser(id);
+    }
+
 }

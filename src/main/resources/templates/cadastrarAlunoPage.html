@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../static/assets/css/secretaria/cadastrarProfessor.css">
+    <link rel="stylesheet" href="../static/assets/css/secretaria/cadastrarAluno.css" th:href="@{/assets/css/secretaria/cadastrarAluno.css}">
 
     <title>Página da Secretaria</title>
 </head>
@@ -13,33 +13,29 @@
     <main>
         <div class="bg-image"></div>
         <div class="container_form">
-            <form class="form">
+            <form class="form" th:object="${aluno}" th:action="@{/registrarAluno}" th:method="POST">
                 <div class="left">
                     <div class="form-group">
-                        <input type="text" required>
+                        <input type="text" th:field="*{idUser}" required>
                         <label class="id">Id</label>
                     </div>
                     <div class="form-group">
-                        <input type="text" required>
+                        <input type="text" th:field="*{name}" required>
                         <label class="name">Nome Completo</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" required>
+                        <input type="email" th:field="*{email}" required>
                         <label class="email">Email</label>
                     </div>
                 </div>
                 <div class="right">
                     <div class="form-group">
-                        <input type="text" required>
-                        <label class="degree">Graduação</label>
+                        <input type="text" th:field="*{motherName}" required>
+                        <label class="motherName">Nome da mãe</label>
                     </div>
                     <div class="form-group">
-                        <input type="text">
-                        <label class="master-degree">Mestrado</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" >
-                        <label class="doctor-degree">Doutorado</label>
+                        <input type="text"th:field="*{fatherName}" >
+                        <label class="fatherName">Nome do pai</label>
                     </div>
                 </div>
                 <input type="submit" value="Cadastrar">

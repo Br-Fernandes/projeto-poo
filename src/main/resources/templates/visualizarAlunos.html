@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/assets/images/icon-site.jpeg" th:href="@{/assets/images/icon-site.jpeg}">
+    <link rel="stylesheet" href="../static/assets/css/professor/visualizarAlunos.css" th:href="@{../static/assets/css/professor/visualizarAlunos.css}">
+
+    <title>Página do Professor</title>
+</head>
+<body>
+
+<header>
+    <div class="cabecalho">
+        <div class="titulo"><h1>FI Goiano</h1></div>
+    </div>
+</header>
+
+<main>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Nota</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr th:each="aluno : ${estudantes}">
+                <td th:text="${aluno.id}"></td>
+                <td th:text="${aluno.grade}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</main>
+
+</body>
+</html>
