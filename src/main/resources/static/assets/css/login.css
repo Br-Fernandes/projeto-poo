@@ -25,7 +25,35 @@ form{
 label{
     display: inline-block;
     width: 90px;
-}    
+}
+
+.loginBackground{
+    align-content: center;
+    margin: auto;
+    
+}
+body{
+    background-image: url("https://img.freepik.com/free-vector/geometric-science-education-background-vector-gradient-blue-digital-remix_53876-125993.jpg?w=2000");
+}
+
+.loginBox{
+    display: flex;
+    width: 350px;
+    height: 400px;
+    align-content: center;
+    align-items: center;
+    background-color: lightblue;
+    margin: auto;
+    border-radius: 35px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px blue;
+}
+
+.input{
+    border-radius: 25px;
+    
+}
+
 .botao_login{
     display: inline-block;
     width: 130px;
@@ -35,7 +63,4 @@ label{
     text-align: center;
     align-content: center;
     width: 90px;
-}
-footer{
-    background-color: #AAA;
 }
