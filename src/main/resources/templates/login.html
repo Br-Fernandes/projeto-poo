@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../static/assets/css/login.css" th:href="@{/assets/css/login.css}" />
     <link rel="shortcut icon" href="../static/assets/images/icon-site.jpeg" th:href="@{/assets/images/icon-site.jpeg}">
+    <link rel="stylesheet" href="../static/assets/css/style.css">
 
     
     <title>Núcleo Estudantil</title>
@@ -13,33 +14,39 @@
 <body>
     <header>
         <div class="cabecalho">
-            <div class="titulo"><h1>FI Goiano</h1></div>
+            <div class="titulo"><h1>φ FI Goiano φ</h1></div>
         </div>
     </header>
 
     <main>
 
-
-        <form th:object="${user}" th:action="@{/login}"  method="POST">
+    <br>
+    <div class = "loginBackground">
+        <form th:object="${user}" th:action="@{/login}"  method="POST" class="loginBox">
             <span th:class="error" th:if="${error}">Email e/ou Senha incorretos</span>
             <div class="mat" >             
-                <input type="email" id="email" required th:field="*{email}">
-                <label  class="email" >Email</label>
+                <label>Email</label>
+                <input type="email" id="email" class="input" required th:field="*{email}">
             </div>
             <br>
-            <div class="password">
-                <input type="password" name="id" id="password" required th:field="*{idUser}">
-                <label class="password"  >Senha</label>
+            <div>
+                <label class="password">Senha</label>
+                <input type="password" name="id" class="input" id="password" required th:field="*{idUser}">
             </div>
             <br>
             <div class="botao_login">
                 <input type="submit" value="Entrar">
             </div>
         </form>
-
+    </div>
     </main>
 
-    
+    <footer>
+        <div>
+            <h1 class="feitoPor">Feito por Bruno Cesar, Samuel Silva, Luan Ribeiro, Maria Clara e Luis direoto copiraigth ©</h1>
+        </div>
+    </footer>
+
 
 </body>
 </html>
