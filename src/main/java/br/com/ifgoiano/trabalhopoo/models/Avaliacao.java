@@ -23,6 +23,9 @@ public class Avaliacao {
     private Long idStudent;
 
     @Column(nullable = false)
+    private  String nameStudent;
+
+    @Column(nullable = false)
     private Double grade;
 
 }

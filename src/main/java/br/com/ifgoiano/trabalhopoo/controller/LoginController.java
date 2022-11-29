@@ -1,5 +1,6 @@
 package br.com.ifgoiano.trabalhopoo.controller;
 
+import br.com.ifgoiano.trabalhopoo.models.Secretaria;
 import br.com.ifgoiano.trabalhopoo.models.Usuario;
 import br.com.ifgoiano.trabalhopoo.services.LoginServices;
 
@@ -29,24 +30,23 @@ public class LoginController {
     public String login(Model model) {
         model.addAttribute("user", new Usuario());
         return "login";
-
     }
 
     @PostMapping("/login")
-    public String getLoginUser( @ModelAttribute("user") Usuario user, Error error) {
+    public String getLoginUser(@ModelAttribute("user") Usuario user, Error error) {
         if (user.getEmail().equals("secretaria@gmail.com") && user.getIdUser() == 1111111){
             return "redirect:/secretaria";
-        } else if(loginServices.existsAluno(user.getEmail(),user.getIdUser())){
+        }
+        if (loginServices.existsAluno(user.getEmail(),user.getIdUser())){
             return "redirect:/alunoPage";
-        } else if (loginServices.existsProfessor(user.getEmail(), user.getIdUser())) {
+        }
+        if (loginServices.existsProfessor(user.getEmail(), user.getIdUser())) {
             return "redirect:/professorPage";
-        } else if (loginServices.existsCoordenador(user.getEmail(), user.getIdUser())) {
+        }
+        if (loginServices.existsCoordenador(user.getEmail(), user.getIdUser())) {
             return "redirect:/coordenadorPage";
-        } else {
+        }
             error.addSuppressed(new Throwable("Login errado"));
             return "login";
-        }
-
     }
-
 }
