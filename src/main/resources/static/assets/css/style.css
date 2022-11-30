@@ -16,13 +16,15 @@ body{
     border: 1px solid black;
 }
 
+body{
+    background-image: url("https://img.freepik.com/free-vector/geometric-science-education-background-vector-gradient-blue-digital-remix_53876-125993.jpg?w=2000");
+}
 
 /*Main*/
 main{
     width: 100%;
 }
 .container{
-    
     text-align: justify;
     display: flex;
 }
