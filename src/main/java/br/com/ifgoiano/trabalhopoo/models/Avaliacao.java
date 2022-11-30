@@ -3,10 +3,8 @@ package br.com.ifgoiano.trabalhopoo.models;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Getter
@@ -14,8 +12,15 @@ import javax.persistence.Table;
 @Table(name = "TB_AVALIACAO")
 public class Avaliacao {
 
-    @EmbeddedId
-    private AvaliacaoID id;
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    private UUID id;
+
+    @Column(nullable = false)
+    private String subjectName;
+
+    @Column(nullable = false)
+    private Long idStudent;
 
     @Column(nullable = false)
     private Double grade;
