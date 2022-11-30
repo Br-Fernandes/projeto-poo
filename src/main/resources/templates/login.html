@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../static/assets/css/login.css" th:href="@{/assets/css/login.css}" />
     <link rel="shortcut icon" href="../static/assets/images/icon-site.jpeg" th:href="@{/assets/images/icon-site.jpeg}">
     <link rel="stylesheet" href="../static/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Khojki:wght@700&display=swap" rel="stylesheet">
 
     
     <title>Núcleo Estudantil</title>
@@ -21,21 +22,21 @@
     <main>
 
     <br>
-    <div class = "loginBackground">
-        <form th:object="${user}" th:action="@{/login}"  method="POST" class="loginBox">
-            <span th:class="error" th:if="${error}">Email e/ou Senha incorretos</span>
+    <div class="loginBackground">
+        <form th:object="${user}" th:action="@{/login}"  method="POST"  class="loginBox">
+            <span th:class="error" th:if="${error}" class="error_msg">Email e/ou Senha incorretos</span>
             <div class="mat" >             
-                <label>Email</label>
+                <label class="lbl">Email</label>
                 <input type="email" id="email" class="input" required th:field="*{email}">
             </div>
             <br>
             <div>
-                <label class="password">Senha</label>
+                <label class="lbl">Senha</label>
                 <input type="password" name="id" class="input" id="password" required th:field="*{idUser}">
             </div>
             <br>
-            <div class="botao_login">
-                <input type="submit" value="Entrar">
+            <div >
+                <input class="botao_login" type="submit" value="Entrar">
             </div>
         </form>
     </div>

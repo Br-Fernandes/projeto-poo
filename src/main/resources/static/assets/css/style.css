@@ -61,6 +61,11 @@ main{
     text-align: center;
 }
 
+.error_msg{
+    color: white;
+}
+
+
 .button:hover {
     background-color: #009cda;
     box-shadow: 3px 4px 0 black;
@@ -86,11 +91,7 @@ main{
 .container{
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.mat{
-
+    align-content: center;
 }
 
 .btn_login a{

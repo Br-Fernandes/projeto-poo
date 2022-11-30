@@ -7,13 +7,6 @@ body{
 main{
     width: 100%;
 }
-.cabecalho{
-    height: 100px;
-    background-color: #019220;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 form{
     display: flex; 
@@ -42,22 +35,59 @@ body{
     height: 400px;
     align-content: center;
     align-items: center;
-    background-color: lightblue;
+    background-color: #ff00ff;
     margin: auto;
     border-radius: 35px;
     border: 2px solid black;
     box-shadow: 2px 2px 2px blue;
+    opacity: 60%;
 }
+
 
 .input{
     border-radius: 25px;
+    height: 20px;
+    
     
 }
 
-.botao_login{
-    display: inline-block;
-    width: 130px;
+.lbl{
+    font-size: 20px;
+    text-align: center;
+    
+    font-family: 'Noto Serif Khojki', serif;
 }
+
+.botao_login{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    width: 90px;
+    height: 40px;
+    size: 25px;
+    background-color: #8dcff4;
+    color: #006189;
+    border-radius: 35px;
+    border: 1px solid black;
+    box-shadow: 3px 4px 2px;
+    transition-duration: 0.5s;
+    text-decoration: none;
+    font-family: 'Noto Serif Khojki', serif;
+}
+
+.botao_login:hover {
+    background-color: #009cda;
+    box-shadow: 3px 4px 0 black;
+    color: black;
+    cursor: pointer;
+}
+
+.botao_login:active{
+    position: relative;
+    box-shadow: none;
+    top: 4px;
+}
+
 .error{
     display: inline-block;
     text-align: center;
