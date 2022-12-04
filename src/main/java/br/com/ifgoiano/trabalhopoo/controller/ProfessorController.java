@@ -36,7 +36,7 @@ public class ProfessorController {
 
     @GetMapping("/notaAlunos")
     public String getAllStudents(Model model){
-        ArrayList<Avaliacao> alunos = (ArrayList<Avaliacao>) professorServices.findAll();
+        ArrayList<Avaliacao> alunos = (ArrayList<Avaliacao>) professorServices.findAllByIdProfessor();
         model.addAttribute("estudantes", alunos);
         return "visualizarAlunos";
     }

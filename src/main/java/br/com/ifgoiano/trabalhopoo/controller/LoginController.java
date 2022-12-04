@@ -1,5 +1,7 @@
 package br.com.ifgoiano.trabalhopoo.controller;
 
+import br.com.ifgoiano.trabalhopoo.TrabalhoPooApplication;
+import br.com.ifgoiano.trabalhopoo.components.Gambiarra;
 import br.com.ifgoiano.trabalhopoo.models.Secretaria;
 import br.com.ifgoiano.trabalhopoo.models.Usuario;
 import br.com.ifgoiano.trabalhopoo.services.LoginServices;
@@ -12,13 +14,13 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class LoginController {
 
+    Gambiarra gambiarra = new Gambiarra();
     final LoginServices loginServices;
 
     @Autowired
     public LoginController(LoginServices loginServices) {
         this.loginServices = loginServices;
     }
-
 
     @GetMapping("/")
     public String index() {
@@ -34,6 +36,7 @@ public class LoginController {
 
     @PostMapping("/login")
     public String getLoginUser(@ModelAttribute("user") Usuario user, Error error) {
+        gambiarra.gambiarraTemporaria = user.getIdUser();
         if (user.getEmail().equals("secretaria@gmail.com") && user.getIdUser() == 1111111){
             return "redirect:/secretaria";
         }

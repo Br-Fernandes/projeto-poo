@@ -24,8 +24,8 @@ public class ProfessorServices {
         this.disciplinaRepository = disciplinaRepository;
     }
 
-    public Object findAll() {
-        return avaliacaoRepository.findAll();
+    public Object findAllByIdProfessor() {
+        return avaliacaoRepository.findAllByIdProfessor();
     }
 
     public boolean existsBySubjectName(String subjectName) {
