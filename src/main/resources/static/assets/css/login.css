@@ -17,9 +17,15 @@ form{
 }
 label{
     display: inline-block;
-    color: white;
     width: 90px;
 }
+
+.loginBackground{
+    align-content: center;
+    margin: auto;
+    
+}
+
 
 .loginBox{
     display: flex;
@@ -27,12 +33,12 @@ label{
     height: 400px;
     align-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #ff00ff;
     margin: auto;
     border-radius: 35px;
     border: 2px solid black;
     box-shadow: 2px 2px 2px blue;
-
+    opacity: 60%;
 }
 
 
