@@ -18,7 +18,7 @@ import javax.validation.Valid;
 @Controller
 public class SecretariaController {
 
-    LoginController login = new LoginController();
+
 
     final LoginServices loginServices;
     final SecretariaService secretariaService;

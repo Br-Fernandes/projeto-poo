@@ -10,6 +10,6 @@ import java.util.UUID;
 public interface AvaliacaoRepository extends JpaRepository<Avaliacao, UUID> {
 
 
-    @Query(value = "SELECT * from tb_avaliacao where tb_avaliacao.name")
+    @Query(value = "SELECT * from tb_avaliacao where tb_avaliacao.name", nativeQuery = true)
     Object findAllByIdProfessor();
 }
