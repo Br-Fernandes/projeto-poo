@@ -16,10 +16,10 @@ public class AlunosDisciplinas {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(nullable = false, unique = true, length = 35)
+    @Column(nullable = false, length = 35)
     private String subjectName;
 
-    @Column(nullable = false, unique = true, length = 7)
+    @Column(nullable = false, length = 7)
     private Long idAluno;
 
 }

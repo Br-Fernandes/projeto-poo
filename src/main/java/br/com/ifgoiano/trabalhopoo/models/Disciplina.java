@@ -21,7 +21,7 @@ public class Disciplina {
     private String subjectName;
 
     @Column(nullable = false)
-    private String nameProfessor;
+    private Long idProfessor;
 
     @Column(nullable = false)
     private Integer semester;
