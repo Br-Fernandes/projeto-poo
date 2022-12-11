@@ -9,12 +9,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @SpringBootApplication
 public class TrabalhoPooApplication {
 
-    public static void main(String[] args) { SpringApplication.run(TrabalhoPooApplication.class, args); }
-
-    /*
-    * mexer no ProfessorController (não abre página)
-    * criar pages de criação de avaliação
-    *  criar page de visualização de nota para alunos
-    * */
+    public static void main(String[] args) {
+        SpringApplication.run(TrabalhoPooApplication.class, args);
+    }
 
 }

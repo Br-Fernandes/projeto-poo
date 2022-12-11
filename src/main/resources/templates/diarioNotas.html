@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="../static/assets/images/icon-site.jpeg" th:href="@{/assets/images/icon-site.jpeg}">
+  <link rel="stylesheet" href="../static/assets/css/professor/diarioNotas.css" th:href="@{/assets/css/professor/diarioNotas.css}">
 
   <title>Página do Professor</title>
 
@@ -22,12 +23,17 @@
   </header>
 
   <main>
-    <form th:action="@{/diarioNotas}" method="POST">
+    <form th:action="@{/diarioNotas}" th:object="${aluno and disciplina and avaliacao}" method="POST">
+
+      <span th:class="error" th:if="${error}" th:text="error"></span>
       <input type="text" class="id_student" th:value="${aluno.idUser}" th:field="*{aluno.idUser}">
       <label class="id_student">ID do Aluno</label>
 
-      <input type="text" class="subjectName" th:value="${disciplina.subjectName}" th:field="*{disciplina.subjectName}">
-      <label class="subjectName">Disciplina</label>
+      <select class="form-control" th:field="*{disciplina.subjectName}">
+        <option th:each="d : ${disciplinas}"
+                th:value="${d}"
+                th:text="${d}"></option>
+      </select>
 
       <input type="number" class="grade" th:value="${avaliacao.grade}" th:field="*{avaliacao.grade}">
       <label class="grade">Nota do Aluno</label>

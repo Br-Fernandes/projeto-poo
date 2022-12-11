@@ -18,6 +18,8 @@ import javax.validation.Valid;
 @Controller
 public class SecretariaController {
 
+
+
     final LoginServices loginServices;
     final SecretariaService secretariaService;
 
@@ -79,6 +81,7 @@ public class SecretariaController {
                                          Error error) {
         if (loginServices.existsById(aluno.getIdUser()) && secretariaService.existsBySubjectName(disciplina.getSubjectName())) {
             secretariaService.setAlunoDisciplina(disciplina.getSubjectName(), aluno.getIdUser());
+            System.out.println();
             return "redirect:/secretaria";
         }
         System.out.println(disciplina.getSubjectName());

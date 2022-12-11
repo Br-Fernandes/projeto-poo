@@ -1,12 +1,34 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="pt" >
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="../static/assets/images/icon-site.jpeg" th:href="@{/assets/images/icon-site.jpeg}">
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/style.css" th:href="@{/assets/css/style.css}" />
 
     <title>Página do Aluno</title>
 </head>
 <body>
-  <h1>Abrobra</h1>
+  <header>
+      <div class="cabecalho">
+          <div class="titulo"><h1>φ FI Goiano φ</h1></div>
+      </div>
+  </header>
+
+  <main>
+      <table>
+          <thead>
+            <tr>
+                <th>Disciplina</th>
+                <th>Nota</th>
+            </tr>
+            </thead>
+          <tbody >
+            <tr th:each="avaliacao : ${avaliacoes}">
+                <td th:text="${avaliacao.subjectName}"></td>
+                <td th:text="${avaliacao.grade}"></td>
+            </tr>
+          </tbody>
+      </table>
+  </main>
 </body>
 </html>

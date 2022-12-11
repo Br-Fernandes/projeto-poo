@@ -19,7 +19,8 @@ public class SecretariaService {
 
     @Autowired
     public SecretariaService(AlunoRepository alunoRepository, CoordenadorRepository coordenadorRepository,
-                             ProfessorRepository professorRepository, DisciplinaRepository disciplinaRepository, AlunoDisciplinaRepository alunoDisciplinaRepository, ProfessorDisciplinaRepository professorDisciplinaRepository) {
+                             ProfessorRepository professorRepository, DisciplinaRepository disciplinaRepository,
+                             AlunoDisciplinaRepository alunoDisciplinaRepository, ProfessorDisciplinaRepository professorDisciplinaRepository) {
         this.alunoRepository = alunoRepository;
         this.coordenadorRepository = coordenadorRepository;
         this.professorRepository = professorRepository;

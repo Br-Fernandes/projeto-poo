@@ -20,6 +20,9 @@ public class Avaliacao {
     private String subjectName;
 
     @Column(nullable = false)
+    private Long idProfessor;
+
+    @Column(nullable = false)
     private Long idStudent;
 
     @Column(nullable = false)

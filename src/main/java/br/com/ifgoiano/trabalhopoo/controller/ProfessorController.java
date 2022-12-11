@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
-import java.util.Optional;
 
 @Controller
 public class ProfessorController {
@@ -27,25 +26,28 @@ public class ProfessorController {
     public ProfessorController(ProfessorServices professorServices, LoginServices loginServices) {
         this.professorServices = professorServices;
         this.loginServices = loginServices;
+
     }
 
     @GetMapping("/professorPage")
-    public String professor() {
-        return "professorPage";
-    }
+    public String professor() { return "professorPage"; }
 
     @GetMapping("/notaAlunos")
     public String getAllStudents(Model model){
-        ArrayList<Avaliacao> alunos = (ArrayList<Avaliacao>) professorServices.findAll();
+        System.out.println(LoginController.gambiarra);
+        ArrayList<Avaliacao> alunos = professorServices.findAllByIdProfessor(LoginController.gambiarra);
         model.addAttribute("estudantes", alunos);
         return "visualizarAlunos";
     }
 
     @GetMapping("/diarioNotas")
-    public String getGradeDiary(Model model, Model model2, Model model3){
+    public String getGradeDiary(Model model, Model model2, Model model3, Model model4){
         model.addAttribute("aluno", new Aluno());
         model2.addAttribute("disciplina", new Disciplina());
         model3.addAttribute("avaliacao", new Avaliacao());
+
+        ArrayList<String> subjects = professorServices.findAllSubjectByIdProfessor(LoginController.gambiarra);
+        model4.addAttribute("disciplinas", subjects);
         return "diarioNotas";
     }
 
@@ -53,24 +55,19 @@ public class ProfessorController {
     public String setGradeDiary(@ModelAttribute("aluno")@Valid Aluno aluno,
                                 @ModelAttribute("disciplina") @Valid Disciplina disciplina,
                                 @ModelAttribute("avaliacao") @Valid Avaliacao avaliacao,
-                                Error error){
-        //Optional<Aluno> alu = professorServices.findById(String.valueOf(aluno.getIdUser()));
-        System.out.println(aluno.getIdUser());
-        System.out.println(aluno.getName());
-        System.out.println(disciplina.getSubjectName());
-        System.out.println(avaliacao.getGrade());
-        //System.out.println(professorServices.findById(aluno.getIdUser());
+                                Error error) {
         if (loginServices.existsById(aluno.getIdUser()) && professorServices.existsBySubjectName(disciplina.getSubjectName())){
-
             Avaliacao ava = new Avaliacao();
             ava.setIdStudent(aluno.getIdUser());
             ava.setNameStudent(professorServices.findNameById(aluno.getIdUser()));
+            ava.setIdProfessor(LoginController.gambiarra);
             ava.setSubjectName(disciplina.getSubjectName());
             ava.setGrade(avaliacao.getGrade());
+
             professorServices.saveAvaliacao(ava);
             return "redirect:/diarioNotas";
         }
-        error.addSuppressed(new Throwable("Aluno não existe"));
+        //error.addSuppressed(new Throwable("Aluno não matriculado"));
         return "redirect:/diarioNotas";
     }
 }
