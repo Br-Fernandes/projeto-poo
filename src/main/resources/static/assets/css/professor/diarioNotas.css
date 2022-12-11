@@ -1,3 +1,4 @@
+
 .container_form{
     min-height: 80vh;
     display: grid;
@@ -24,7 +25,7 @@
     flex-direction: column;
 }
 
-.input{
+#input{
     margin:5px;
     border-radius: 35px;
     width: 250px;
@@ -32,14 +33,47 @@
     box-shadow: 4px 4px 4px darkblue;
 }
 
-.combobox{
+#combobox{
     margin: 5px;
     border-radius: 35px;
     height: 25px;
     box-shadow: 5px 5px 5px black;
+    
 
 }
+
+#button{
+    margin: 25px;
+    font-size: 23px;
+    background-color: #8dcff4;
+    color: #006189;
+    border-radius: 35px;
+    border: 1px solid black;
+    padding: 10px;
+    box-shadow: 3px 4px 2px;
+    transition-duration: 0.5s;
+    text-decoration: none;
+}
+
+#button:hover {
+    background-color: #009cda;
+    box-shadow: 3px 4px 0 black;
+    color: black;
+    cursor: pointer;
+}
+
+#button:active{
+    position: relative;
+    box-shadow: none;
+    top: 4px;
+}
+
 
 #submit{
     margin: 5px;
 }
+
+label{
+    color: white;
+}
+
