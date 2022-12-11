@@ -11,45 +11,53 @@
 </head>
 <body>
 
-    <header>
-        <div class="cabecalho">
-            <div class="titulo"><h1>φ FI Goiano φ</h1></div>
+    <header class="cabecalho">
+        <div class="titulo"><h1>φ FI Goiano φ</h1></div>
+        <div class="logoutButtonBox">
+            <a class="logoutButton">
+                <img src="https://th.bing.com/th/id/R.775153caa86d459081e1059e6ecb10ac?rik=cffFRcVqQ27BWw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_284036.png&ehk=TFcv7HlytR36H7vQRWW2LuochFcoIY0urQ%2bnjjjaaHc%3d&risl=&pid=ImgRaw&r=0" alt="logout" class="logoutImg">
+            </a>
+    
         </div>
-    </header>
+      </header>
     
     <main>
         <div class="bg-image"></div>
         <div class="container_form">
             <form class="form" th:object="${professor}" th:action="@{/registrarProfessor}" th:method="POST" >
+            <div class="alignment">
                 <div class="left">
                     <div class="form-group">
-                        <input type="text" th:field="*{idUser}" required>
+                        <input type="text" th:field="*{idUser}" required class="input">
                         <label class="id">Id</label>
                     </div>
                     <div class="form-group">
-                        <input type="text" th:field="*{name}" required>
+                        <input type="text" th:field="*{name}" required class="input">
                         <label class="name">Nome Completo</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" th:field="*{email}" required>
+                        <input type="email" th:field="*{email}" required class="input">
                         <label class="email">Email</label>
                     </div>
                 </div>
                 <div class="right">
                     <div class="form-group">
-                        <input type="text" th:field="*{degree}" required>
+                        <input type="text" th:field="*{degree}" required class="input">
                         <label class="degree">Graduação</label>
                     </div>
                     <div class="form-group">
-                        <input type="text" th:field="*{masterDegree}">
+                        <input type="text" th:field="*{masterDegree}" class="input">
                         <label class="master-degree">Mestrado</label>
                     </div>
                     <div class="form-group">
-                        <input type="text" th:field="*{doctorateDegree}" >
+                        <input type="text" th:field="*{doctorateDegree}" class="input">
                         <label class="doctor-degree">Doutorado</label>
                     </div>
                 </div>
-                <input type="submit" value="Cadastrar">
+            </div>
+                <div class="rightButton">
+                    <input type="submit" value="Cadastrar" class="button">
+                </div>
             </form>
         </div>
     </main>

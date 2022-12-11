@@ -21,10 +21,7 @@
         </div>
     </header>
 
-    <main>
-
-    <br>
-    <div class="loginBackground">
+    <main class="formsBackground">
         <form th:object="${user}" th:action="@{/login}"  method="POST"  class="loginBox">
             <span th:class="error" th:if="${error}" class="error_msg">Email e/ou Senha incorretos</span>
             <div class="mat" >             
@@ -41,7 +38,6 @@
                 <input class="botao_login" type="submit" value="Entrar">
             </div>
         </form>
-    </div>
     </main>
 
     <footer>
