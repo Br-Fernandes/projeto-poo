@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../static/assets/css/login.css" th:href="@{../static/assets/css/professor/professor.css}" />
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/professor/professor.css" th:href="@{../static/assets/css/professor/professor.css}" />
     <link rel="shortcut icon" href="../static/assets/images/icon-site.jpeg" th:href="@{/assets/images/icon-site.jpeg}">
     <link rel="stylesheet" href="../static/assets/css/style.css">
 
@@ -23,8 +23,17 @@
       </header>
 <main>
 
-    <div><button><a th:href="@{/notaAlunos}">Visualizar Alunos</a></button></div>
-    <div><button><a th:href="@{/diarioNotas}">Diário de Notas</a></button></div>
+    <div class="formularioBackground">
+        <div class="container_options">
+            <div class="buttons_register">
+                 <div><a th:href="@{/notaAlunos}" class="btn">Visualizar Alunos</a></div>
+                <div><a th:href="@{/diarioNotas}" class="btn">Diário de Notas</a></div>
+            </div>
+            <div class="imgbox">
+                <img src="https://seguindonews.com/wp-content/uploads/2021/01/postimg-60008bcf756963652.jpg" alt="manoelgomes" class="img">
+            </div>
+        </div>
+    </div>
 
 
 </main>
