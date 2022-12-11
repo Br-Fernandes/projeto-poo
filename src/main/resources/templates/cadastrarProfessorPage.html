@@ -25,35 +25,39 @@
         <div class="bg-image"></div>
         <div class="container_form">
             <form class="form" th:object="${professor}" th:action="@{/registrarProfessor}" th:method="POST" >
+            <div class="alignment">
                 <div class="left">
                     <div class="form-group">
-                        <input type="text" th:field="*{idUser}" required>
+                        <input type="text" th:field="*{idUser}" required class="input">
                         <label class="id">Id</label>
                     </div>
                     <div class="form-group">
-                        <input type="text" th:field="*{name}" required>
+                        <input type="text" th:field="*{name}" required class="input">
                         <label class="name">Nome Completo</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" th:field="*{email}" required>
+                        <input type="email" th:field="*{email}" required class="input">
                         <label class="email">Email</label>
                     </div>
                 </div>
                 <div class="right">
                     <div class="form-group">
-                        <input type="text" th:field="*{degree}" required>
+                        <input type="text" th:field="*{degree}" required class="input">
                         <label class="degree">Graduação</label>
                     </div>
                     <div class="form-group">
-                        <input type="text" th:field="*{masterDegree}">
+                        <input type="text" th:field="*{masterDegree}" class="input">
                         <label class="master-degree">Mestrado</label>
                     </div>
                     <div class="form-group">
-                        <input type="text" th:field="*{doctorateDegree}" >
+                        <input type="text" th:field="*{doctorateDegree}" class="input">
                         <label class="doctor-degree">Doutorado</label>
                     </div>
                 </div>
-                <input type="submit" value="Cadastrar">
+            </div>
+                <div class="rightButton">
+                    <input type="submit" value="Cadastrar" class="button">
+                    </div>
             </form>
         </div>
     </main>

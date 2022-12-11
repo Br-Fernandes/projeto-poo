@@ -2,11 +2,6 @@ body{
     margin: 0;
     padding: 0;
 }
-
-header{
-    min-height: 20vh;
-    background-color: aquamarine;
-}
 .container_form{
     min-height: 80vh;
 }
