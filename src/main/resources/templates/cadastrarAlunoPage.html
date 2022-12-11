@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/assets/css/secretaria/cadastrarAluno.css" th:href="@{/assets/css/secretaria/cadastrarAluno.css}">
     <link rel="stylesheet" href="../static/assets/css/style.css">
+    <link rel="shortcut icon" href="../static/assets/images/icon-site.jpeg" th:href="@{/assets/images/icon-site.jpeg}">
 
     <title>Página da Secretaria</title>
 </head>
@@ -25,31 +26,35 @@
         <div class="bg-image"></div>
         <div class="container_form">
             <form class="form" th:object="${aluno}" th:action="@{/registrarAluno}" th:method="POST">
+                <div class="alignment">
                 <div class="left">
                     <div class="form-group">
-                        <input type="text" th:field="*{idUser}" required>
+                        <input type="text" th:field="*{idUser}" required class="input">
                         <label class="id">Id</label>
                     </div>
                     <div class="form-group">
-                        <input type="text" th:field="*{name}" required>
+                        <input type="text" th:field="*{name}" required class="input">
                         <label class="name">Nome Completo</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" th:field="*{email}" required>
+                        <input type="email" th:field="*{email}" required class="input">
                         <label class="email">Email</label>
                     </div>
                 </div>
                 <div class="right">
                     <div class="form-group">
-                        <input type="text" th:field="*{motherName}" required>
+                        <input type="text" th:field="*{motherName}" required class="input">
                         <label class="motherName">Nome da mãe</label>
                     </div>
                     <div class="form-group">
-                        <input type="text"th:field="*{fatherName}" >
+                        <input type="text"th:field="*{fatherName}" class="input">
                         <label class="fatherName">Nome do pai</label>
                     </div>
                 </div>
-                <input type="submit" value="Cadastrar">
+            </div>
+            <div class="rightButton">
+                <input type="submit" value="Cadastrar" class="button">
+            </div>
             </form>
         </div>
     </main>
