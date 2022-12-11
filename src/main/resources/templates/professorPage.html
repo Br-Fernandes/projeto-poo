@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../static/assets/css/login.css" th:href="@{../static/assets/css/professor/professor.css}" />
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/login.css" th:href="@{/assets/css/professor.css}" />
     <link rel="shortcut icon" href="../static/assets/images/icon-site.jpeg" th:href="@{/assets/images/icon-site.jpeg}">
-    <link rel="stylesheet" href="../static/assets/css/style.css">
+    <link rel="stylesheet" href="../static/assets/css/style.css" th:href="@{/assets/css/style.css}">
 
     <title>Página do Professor</title>
 </head>
@@ -15,12 +15,12 @@
     <header class="cabecalho">
         <div class="titulo"><h1>φ FI Goiano φ</h1></div>
         <div class="logoutButtonBox">
-            <a class="logoutButton">
+            <a class="logoutButton" th:href="@{/login}">
                 <img src="https://th.bing.com/th/id/R.775153caa86d459081e1059e6ecb10ac?rik=cffFRcVqQ27BWw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_284036.png&ehk=TFcv7HlytR36H7vQRWW2LuochFcoIY0urQ%2bnjjjaaHc%3d&risl=&pid=ImgRaw&r=0" alt="logout" class="logoutImg">
             </a>
     
-</div>
-</header>
+        </div>
+    </header>
 
 <main>
 

@@ -34,7 +34,6 @@ public class ProfessorController {
 
     @GetMapping("/notaAlunos")
     public String getAllStudents(Model model){
-        System.out.println(LoginController.gambiarra);
         ArrayList<Avaliacao> alunos = professorServices.findAllByIdProfessor(LoginController.gambiarra);
         model.addAttribute("estudantes", alunos);
         return "visualizarAlunos";
@@ -54,8 +53,7 @@ public class ProfessorController {
     @PostMapping("/diarioNotas")
     public String setGradeDiary(@ModelAttribute("aluno")@Valid Aluno aluno,
                                 @ModelAttribute("disciplina") @Valid Disciplina disciplina,
-                                @ModelAttribute("avaliacao") @Valid Avaliacao avaliacao,
-                                Error error) {
+                                @ModelAttribute("avaliacao") @Valid Avaliacao avaliacao) {
         if (loginServices.existsById(aluno.getIdUser()) && professorServices.existsBySubjectName(disciplina.getSubjectName())){
             Avaliacao ava = new Avaliacao();
             ava.setIdStudent(aluno.getIdUser());
@@ -67,7 +65,7 @@ public class ProfessorController {
             professorServices.saveAvaliacao(ava);
             return "redirect:/diarioNotas";
         }
-        //error.addSuppressed(new Throwable("Aluno não matriculado"));
+
         return "redirect:/diarioNotas";
     }
 }

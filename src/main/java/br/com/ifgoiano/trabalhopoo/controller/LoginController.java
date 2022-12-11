@@ -52,6 +52,6 @@ public class LoginController {
             return "redirect:/coordenadorPage";
         }
         //error.addSuppressed(new Throwable("Login errado"));
-        return "login";
+        return "/login";
     }
 }

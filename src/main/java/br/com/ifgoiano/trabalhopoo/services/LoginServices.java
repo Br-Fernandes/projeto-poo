@@ -26,12 +26,12 @@ public class LoginServices {
     }
 
     public boolean existsProfessor(String email, Long id) {
-        return professorRepository.existsByEmail(email) && professorRepository.existsByIdUser(id);
+        return professorRepository.existsByEmail(email) || professorRepository.existsByIdUser(id);
     }
 
 
     public boolean existsCoordenador(String email, Long id) {
-        return coordenadorRepository.existsByEmail(email) && coordenadorRepository.existsByIdUser(id);
+        return coordenadorRepository.existsByEmail(email) || coordenadorRepository.existsByIdUser(id);
     }
 
     public boolean existsById(Long id){

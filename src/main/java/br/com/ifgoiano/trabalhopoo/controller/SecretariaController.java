@@ -47,17 +47,17 @@ public class SecretariaController {
     }
 
     @GetMapping("/registrarAlunoDisciplina")
-    public String registerStudentSubject(Model model, Model model2){
+    public String registerStudentSubject(Model model, Model model2, Error error){
         model.addAttribute("aluno", new Aluno());
         model2.addAttribute(    "disciplina", new Disciplina());
+        error.addSuppressed(new Throwable("Aluno já cadastrado"));
         return "cadastrarAlunoDisciplina";
     }
 
     @PostMapping("/registrarProfessor")
-    public String registerProfessor(@ModelAttribute("professor")Professor professor, Error error){
+    public String registerProfessor(@ModelAttribute("professor")Professor professor){
         if (loginServices.existsProfessor(professor.getEmail(), professor.getIdUser())){
-            error.addSuppressed(new Throwable("Usuario já cadastrado"));
-            return "/secretaria";
+            return "redirect:/registrarProfessor";
         }
 
         secretariaService.setRegisterProfessor(professor);
@@ -65,10 +65,9 @@ public class SecretariaController {
     }
 
     @PostMapping("/registrarAluno")
-    public String registerStudent(@ModelAttribute("aluno") Aluno aluno, Error error){
+    public String registerStudent(@ModelAttribute("aluno") Aluno aluno){
         if (loginServices.existsAluno(aluno.getEmail(), aluno.getIdUser())){
-            error.addSuppressed(new Throwable("Usuário já cadastrado"));
-            return "redirect:/secretaria";
+            return "redirect:/registrarAluno";
         }
 
         secretariaService.setRegisterAluno(aluno);
@@ -77,17 +76,12 @@ public class SecretariaController {
 
     @PostMapping("/registrarAlunoDisciplina")
     public String registerStudentSubject(@ModelAttribute("disciplina") @Valid Disciplina disciplina,
-                                         @ModelAttribute("aluno") @Valid Aluno aluno,
-                                         Error error) {
+                                         @ModelAttribute("aluno") @Valid Aluno aluno) {
         if (loginServices.existsById(aluno.getIdUser()) && secretariaService.existsBySubjectName(disciplina.getSubjectName())) {
             secretariaService.setAlunoDisciplina(disciplina.getSubjectName(), aluno.getIdUser());
-            System.out.println();
             return "redirect:/secretaria";
         }
-        System.out.println(disciplina.getSubjectName());
-        System.out.println(aluno.getIdUser());
 
-        error.addSuppressed(new Throwable("Aluno ou Disciplina inexistente"));
-        return "redirect:/secretaria";
+        return "redirect:/registrarAlunoDisciplina";
     }
 }

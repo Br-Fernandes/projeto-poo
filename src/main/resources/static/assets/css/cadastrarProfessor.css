@@ -1,3 +1,22 @@
+.cabecalho{
+    position: relative;
+    height: 100px;
+    background-color: #00aeed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.titulo{
+    flex: 0 1 auto;
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    /* new */
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 .container_form{
     display: flex;
@@ -62,4 +81,42 @@
     align-items: center;
     justify-content: center;
     height: 50px;
+}
+
+.logoutButtonBox{
+    flex: 0 1 auto;
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    padding-top: 50px;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoutButton{
+    display: flex;
+    background-color: white;
+    margin-right: 10px;
+    border-radius: 35px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    box-shadow: 3px 3px 3px black;
+    cursor: pointer;
+    transition: 0s;
+    width: 100px;
+    height: 45px;
+}
+.logoutButton:active{
+    position: relative;
+    box-shadow: none;
+    top: 4px;
+}
+
+.logoutImg{
+    max-width: 30px;
+    height: 30px;
+    padding: 5px;
 }
