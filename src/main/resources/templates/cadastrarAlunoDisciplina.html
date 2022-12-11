@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/assets/css/secretaria/aluno-disciplina.css" th:href="@{../static/css/secretaria/aluno-disciplina.css}">
-    <link rel="stylesheet" href="../static/assets/css/style.css">
+    <link rel="stylesheet" href="/static/assets/css/secretaria/aluno-disciplina.css" th:href="@{/static/css/secretaria/aluno-disciplina.css}">
+    <link rel="stylesheet" href="../static/assets/css/style.css" th:href="@{/static/css/style.css}">
 
     <title>Página da Secretaria</title>
 </head>
@@ -14,8 +14,8 @@
     <header class="cabecalho">
         <div class="titulo"><h1>φ FI Goiano φ</h1></div>
         <div class="logoutButtonBox">
-            <a class="logoutButton">
-                <img src="https://th.bing.com/th/id/R.775153caa86d459081e1059e6ecb10ac?rik=cffFRcVqQ27BWw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_284036.png&ehk=TFcv7HlytR36H7vQRWW2LuochFcoIY0urQ%2bnjjjaaHc%3d&risl=&pid=ImgRaw&r=0" alt="logout" class="logoutImg">
+            <a class="logoutButton" href="../templates/login.html" th:href="@{/templates/login.html}">
+                <img src="https://th.bing.com/th/id/R.775153caa86d459081e1059e6ecb10ac?rik=cffFRcVqQ27BWw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_284036.png&ehk=TFcv7HlytR36H7vQRWW2LuochFcoIY0urQ%2bnjjjaaHc%3d&risl=&pid=ImgRaw&r=0" alt="logout" class="logoutImg" >
             </a>
     
         </div>
@@ -27,8 +27,8 @@
             <form class="form" th:action="@{/registrarAlunoDisciplina}" th:method="POST">
 
                 <div class="form-group">
-                 <input type="text" th:value="${aluno.idUser}" th:field="*{aluno.idUser}" placeholder="Insira o id de um aluno" required>
-                     <select name="courses" th:value="${disciplina.subjectName}" th:field="*{disciplina.subjectName}" required>
+                 <input type="text" th:value="${aluno.idUser}" th:field="*{aluno.idUser}" placeholder="Insira o id de um aluno" required class="input">
+                     <select name="courses" th:value="${disciplina.subjectName}" th:field="*{disciplina.subjectName}" required class="combobox">
                         <option th:value="'Algebra Linear'">Álgebra Linear</option>
                         <option th:value="'Estrutura de Dados'">Estrutura de Dados</option>
                         <option th:value="'Sistemas Operacionais'">Sistemas Operacionais</option>
@@ -37,8 +37,11 @@
                         <option th:value="'Redes'">Redes</option>
                         <option th:value="'Programacao Web'">Programação Web</option>
                     </select>
-                    <input type="submit" name="btn_submit" id="submit" value="Pesquisar">
+                    <div>
+                        <input type="submit" name="btn_submit" id="submit" value="Cadastrar" class="button">
+                    </div>
                 </div>
+                
                 
             </form>
         </div>

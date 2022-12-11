@@ -1,9 +1,7 @@
-body{
-    margin: 0;
-    padding: 0;
-}
 .container_form{
     min-height: 80vh;
+    display: grid;
+    place-items: center;
 }
 .container_form form{
     display: flex;
@@ -14,10 +12,35 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
-    width: 500px;
+    height: 30vh;
+    width: 70vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 3px solid black;
+    box-shadow: 5px 5px 5px blue;
+    border-radius: 35px;
     
 }
 .form-group select{
     flex-direction: column;
+}
+
+.input{
+    margin:5px;
+    border-radius: 35px;
+    width: 250px;
+    height: 40px;
+    box-shadow: 4px 4px 4px darkblue;
+}
+
+.combobox{
+    margin: 5px;
+    border-radius: 35px;
+    height: 25px;
+    box-shadow: 5px 5px 5px black;
+    
+
+}
+
+#submit{
+    margin: 5px;
 }

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../static/assets/css/login.css" th:href="@{../static/assets/css/professor/professor.css}" />
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/professor/professor.css" th:href="@{../static/assets/css/professor/professor.css}" />
     <link rel="shortcut icon" href="../static/assets/images/icon-site.jpeg" th:href="@{/assets/images/icon-site.jpeg}">
-    <link rel="stylesheet" href="../static/assets/css/style.css">
+    <link rel="stylesheet" href="../static/assets/css/style.css" th:href="@{/assets/css/style.css}">
 
     <title>Página do Professor</title>
 </head>
@@ -15,17 +15,25 @@
     <header class="cabecalho">
         <div class="titulo"><h1>φ FI Goiano φ</h1></div>
         <div class="logoutButtonBox">
-            <a class="logoutButton">
-                <img src="https://th.bing.com/th/id/R.775153caa86d459081e1059e6ecb10ac?rik=cffFRcVqQ27BWw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_284036.png&ehk=TFcv7HlytR36H7vQRWW2LuochFcoIY0urQ%2bnjjjaaHc%3d&risl=&pid=ImgRaw&r=0" alt="logout" class="logoutImg">
+            <a class="logoutButton" href="../templates/login.html" th:href="@{/templates/login.html}">
+                <img src="https://th.bing.com/th/id/R.775153caa86d459081e1059e6ecb10ac?rik=cffFRcVqQ27BWw&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_284036.png&ehk=TFcv7HlytR36H7vQRWW2LuochFcoIY0urQ%2bnjjjaaHc%3d&risl=&pid=ImgRaw&r=0" alt="logout" class="logoutImg" >
             </a>
     
-</div>
-</header>
-
+        </div>
+      </header>
 <main>
 
-    <div><button><a th:href="@{/notaAlunos}">Visualizar Alunos</a></button></div>
-    <div><button><a th:href="@{/diarioNotas}">Diário de Notas</a></button></div>
+    <div class="formularioBackground">
+        <div class="container_options">
+            <div class="buttons_register">
+                 <div><a th:href="@{/notaAlunos}" class="btn">Visualizar Alunos</a></div>
+                <div><a th:href="@{/diarioNotas}" class="btn">Diário de Notas</a></div>
+            </div>
+            <div class="imgbox">
+                <img src="https://seguindonews.com/wp-content/uploads/2021/01/postimg-60008bcf756963652.jpg" alt="manoelgomes" class="img">
+            </div>
+        </div>
+    </div>
 
 
 </main>
