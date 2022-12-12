@@ -11,7 +11,6 @@ import java.util.UUID;
 
 public interface AvaliacaoRepository extends JpaRepository<Avaliacao, UUID> {
 
-
     @Query(value = "SELECT * from tb_avaliacao where tb_avaliacao.id_professor= :gambiarra", nativeQuery = true)
     ArrayList<Avaliacao> findAllTestByIdProfessor(Long gambiarra);
 
