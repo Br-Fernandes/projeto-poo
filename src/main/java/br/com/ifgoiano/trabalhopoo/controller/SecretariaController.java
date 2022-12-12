@@ -18,8 +18,6 @@ import javax.validation.Valid;
 @Controller
 public class SecretariaController {
 
-
-
     final LoginServices loginServices;
     final SecretariaService secretariaService;
 
@@ -40,20 +38,6 @@ public class SecretariaController {
         return "cadastrarProfessorPage";
     }
 
-    @GetMapping("/registrarAluno")
-    public String registrerAluno(Model model){
-        model.addAttribute("aluno", new Aluno());
-        return "cadastrarAlunoPage";
-    }
-
-    @GetMapping("/registrarAlunoDisciplina")
-    public String registerStudentSubject(Model model, Model model2, Error error){
-        model.addAttribute("aluno", new Aluno());
-        model2.addAttribute(    "disciplina", new Disciplina());
-        error.addSuppressed(new Throwable("Aluno já cadastrado"));
-        return "cadastrarAlunoDisciplina";
-    }
-
     @PostMapping("/registrarProfessor")
     public String registerProfessor(@ModelAttribute("professor")Professor professor){
         if (loginServices.existsProfessor(professor.getEmail(), professor.getIdUser())){
@@ -64,6 +48,12 @@ public class SecretariaController {
         return "redirect:/secretaria";
     }
 
+    @GetMapping("/registrarAluno")
+    public String registrerAluno(Model model){
+        model.addAttribute("aluno", new Aluno());
+        return "cadastrarAlunoPage";
+    }
+
     @PostMapping("/registrarAluno")
     public String registerStudent(@ModelAttribute("aluno") Aluno aluno){
         if (loginServices.existsAluno(aluno.getEmail(), aluno.getIdUser())){
@@ -72,6 +62,14 @@ public class SecretariaController {
 
         secretariaService.setRegisterAluno(aluno);
         return "redirect:/secretaria";
+    }
+
+    @GetMapping("/registrarAlunoDisciplina")
+    public String registerStudentSubject(Model model, Model model2){
+        model.addAttribute("aluno", new Aluno());
+        model2.addAttribute(    "disciplina", new Disciplina());
+
+        return "cadastrarAlunoDisciplina";
     }
 
     @PostMapping("/registrarAlunoDisciplina")

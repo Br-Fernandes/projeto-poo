@@ -18,8 +18,6 @@ import java.util.Optional;
 @Service
 public class ProfessorServices {
 
-    private Long professorGambiarra;
-
     final AvaliacaoRepository avaliacaoRepository;
     final AlunoRepository alunoRepository;
     final DisciplinaRepository disciplinaRepository;
@@ -31,8 +29,8 @@ public class ProfessorServices {
         this.disciplinaRepository = disciplinaRepository;
     }
 
-    public ArrayList<Avaliacao> findAllByIdProfessor(Long gambiarra) {
-        return avaliacaoRepository.findAllByIdProfessor(gambiarra);
+    public ArrayList<Avaliacao> findAllTestByIdProfessor(Long gambiarra) {
+        return avaliacaoRepository.findAllTestByIdProfessor(gambiarra);
     }
 
     public boolean existsBySubjectName(String subjectName) {

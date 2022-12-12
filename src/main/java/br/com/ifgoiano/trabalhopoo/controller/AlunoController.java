@@ -21,7 +21,6 @@ public class AlunoController {
 
     @GetMapping("/alunoPage")
     public String aluno(Model model){
-        System.out.println(LoginController.gambiarra);
         ArrayList<Avaliacao> tests = alunoServices.findGradeById(LoginController.gambiarra);
         model.addAttribute("avaliacoes", tests);
         return "alunoPage";

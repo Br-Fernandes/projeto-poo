@@ -51,7 +51,7 @@ public class LoginController {
         if (loginServices.existsCoordenador(user.getEmail(), user.getIdUser())) {
             return "redirect:/coordenadorPage";
         }
-        //error.addSuppressed(new Throwable("Login errado"));
+
         return "/login";
     }
 }

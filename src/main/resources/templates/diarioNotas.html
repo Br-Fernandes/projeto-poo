@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="../static/assets/images/icon-site.jpeg" th:href="@{/assets/images/icon-site.jpeg}">
-  <link rel="stylesheet" href="../static/assets/css/diarioNotas.css" th:href="@{/assets/css/diarioNotas.css}">
-  <link rel="stylesheet" href="../static/assets/css/style.css" th:href="@{/assets/css/style.css}">
+  <link rel="stylesheet" href="../static/diarioNotas.css" th:href="@{/diarioNotas.css}">
+  <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
 
   <title>Página do Professor</title>
 
@@ -25,29 +25,27 @@
   </header>
 
   <main>
-
-    <form th:action="@{/diarioNotas}" method="POST">
-
     <div class="container_form">
-      <div class="form-group">
+      <form th:action="@{/diarioNotas}"  method="POST">
+        <div class="form-group">
 
-        <input type="text" class="id_student" th:value="${aluno.idUser}" th:field="*{aluno.idUser}" id="input">
-        <label class="id_student">ID do Aluno</label>
+          <input type="text"  th:value="${aluno.idUser}" th:field="*{aluno.idUser}" class="input">
+          <label class="id_student">ID do Aluno</label>
 
-        <select class="form-control" th:field="*{disciplina.subjectName}">
+          <select  th:field="*{disciplina.subjectName}" class="combobox">
             <option th:each="d : ${disciplinas}"
-                th:value="${d}"
-                th:text="${d}"></option>
-        </select>
+                    th:value="${d}"
+                    th:text="${d}"></option>
+          </select>
 
-        <input type="number" class="grade" th:value="${avaliacao.grade}" th:field="*{avaliacao.grade}">
-        <label class="grade">Nota do Aluno</label>
+          <input type="number"  th:value="${avaliacao.grade}" th:field="*{avaliacao.grade}" class="input">
+          <label class="grade">Nota do Aluno</label>
 
-        <input type="submit" class="btn_submit" id="button">
-      </div>
+          <input type="submit" class="btn_submit" id="button">
+
+        </div>
+      </form>
     </div>
-    </form>
-
   </main>
 
 </body>

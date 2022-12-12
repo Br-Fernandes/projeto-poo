@@ -13,7 +13,7 @@ public interface AvaliacaoRepository extends JpaRepository<Avaliacao, UUID> {
 
 
     @Query(value = "SELECT * from tb_avaliacao where tb_avaliacao.id_professor= :gambiarra", nativeQuery = true)
-    ArrayList<Avaliacao> findAllByIdProfessor(Long gambiarra);
+    ArrayList<Avaliacao> findAllTestByIdProfessor(Long gambiarra);
 
     @Query(value = "SELECT * from tb_avaliacao where tb_avaliacao.id_student= :gambiarra", nativeQuery = true)
     ArrayList<Avaliacao> findGradeById(Long gambiarra);

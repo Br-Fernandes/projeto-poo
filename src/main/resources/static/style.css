@@ -19,12 +19,12 @@ body{
 
 .titulo{
     flex: 0 1 auto;
-  width: 200px;
-  height: 100px;
-  position: absolute;
-  /* new */
-  left: 50%;
-  transform: translateX(-50%);
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    /* new */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .logoutButtonBox{
@@ -73,7 +73,7 @@ body{
 }
 
 body{
-    background-image: url("https://img.freepik.com/free-vector/geometric-science-education-background-vector-gradient-blue-digital-remix_53876-125993.jpg?w=2000");
+    background-image: url(https://i.imgur.com/ZEMf2XO.png);
 }
 
 /*Main*/

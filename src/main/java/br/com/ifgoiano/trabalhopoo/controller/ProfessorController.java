@@ -34,7 +34,7 @@ public class ProfessorController {
 
     @GetMapping("/notaAlunos")
     public String getAllStudents(Model model){
-        ArrayList<Avaliacao> alunos = professorServices.findAllByIdProfessor(LoginController.gambiarra);
+        ArrayList<Avaliacao> alunos = professorServices.findAllTestByIdProfessor(LoginController.gambiarra);
         model.addAttribute("estudantes", alunos);
         return "visualizarAlunos";
     }
